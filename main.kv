@@ -1,0 +1,300 @@
+
+<ContentNavigationDrawer>:
+
+    ScrollView:
+
+        MDList:
+            OneLineIconListItem:
+                IconLeftWidget:
+                    icon: "/home/student/Desktop/Wank/Stock images/shopicon.jpg"
+            OneLineListItem:
+                text: "Авторизация"
+                on_press:
+                    root.nav_drawer.set_state("close")
+                    root.screen_manager.current = "main"
+
+            OneLineListItem:
+                text: "Вопрос 1"
+                on_press:
+                    root.nav_drawer.set_state("close")
+                    root.screen_manager.current = "scr 1"
+            OneLineListItem:
+                text: "Вопрос 2"
+                on_press:
+                    root.nav_drawer.set_state("close")
+                    root.screen_manager.current = "scr 2"
+            OneLineListItem:
+                text: "Вопрос 3"
+                on_press:
+                    root.nav_drawer.set_state("close")
+                    root.screen_manager.current = "scr 3"
+            OneLineListItem:
+                text: "Вопрос 4"
+                on_press:
+                    root.nav_drawer.set_state("close")
+                    root.screen_manager.current = "scr 4"
+            OneLineListItem:
+                text: "Вопрос 5"
+                on_press:
+                    root.nav_drawer.set_state("close")
+                    root.screen_manager.current = "scr 5"
+            OneLineListItem:
+                text: "Вопрос 6"
+                on_press:
+                    root.nav_drawer.set_state("close")
+                    root.screen_manager.current = "scr 6"
+            OneLineListItem:
+                text: "Вопрос 7"
+                on_press:
+                    root.nav_drawer.set_state("close")
+                    root.screen_manager.current = "scr 7"
+            OneLineListItem:
+                text: "Вопрос 8"
+                on_press:
+                    root.nav_drawer.set_state("close")
+                    root.screen_manager.current = "scr 8"
+            OneLineListItem:
+                text: "Вопрос 9"
+                on_press:
+                    root.nav_drawer.set_state("close")
+                    root.screen_manager.current = "scr 9"
+            OneLineListItem:
+                text: "Вопрос 10"
+                on_press:
+                    root.nav_drawer.set_state("close")
+                    root.screen_manager.current = "scr 10"
+            OneLineListItem:
+                text: "Результаты"
+                on_press:
+                    root.nav_drawer.set_state("close")
+                    root.screen_manager.current = "scr 11"
+
+Screen:
+
+    MDTopAppBar:
+        id: toolbar
+        pos_hint: {"top": 1}
+        elevation: 5
+        title: 'Лучший предмет в мире'
+        left_action_items: [["menu", lambda x: nav_drawer.set_state("open")]]
+
+    MDNavigationLayout:
+        x: toolbar.height
+
+        ScreenManager:
+            id: screen_manager
+
+            Screen:
+                name: "main"
+                MDBoxLayout:
+                    adaptive_height: True
+                    md_bg_color: app.theme_cls.primary_color
+                    MDLabel:
+                        text: "Представься, чтобы мы знали, кто плохо знает математику"
+                        halign: "center"
+
+                    MDTextField:
+                        id: uname
+                        hint_text: "Tikni suda"
+                        helper_text: "Vvedi svou familiu"
+                        helper_text_mode: "on_focus"
+                        text_color: 0, 0, 1, 1
+                    MDRaisedButton:
+                        id: button_1_q
+                        text: "Далее"
+                        text_color: 0, 0, 1, 1
+                        on_press:
+                            app.uname(uname.text)
+
+            Screen:
+                name: "scr 1"
+                MDBoxLayout:
+                    adaptive_height: True
+                    md_bg_color: app.theme_cls.primary_color
+                    MDLabel:
+                        text: 'Вопросий: "1+1=?"'
+                        halign: "center"
+                    MDTextField:
+                        id: scr_test_1
+                        hint_text: "TYT tvoi otvet"
+                        helper_text: "Vvedi svoi otvet"
+                        helper_text_mode: "on_focus"
+                    MDRaisedButton:
+                        id: button_1_q
+                        text: "Далее"
+                        text_color: 0, 0, 1, 1
+                        on_press:
+                            app.submit_1(scr_test_1.text)
+            Screen:
+                name: "scr 2"
+                MDBoxLayout:
+                    adaptive_height: True
+                    md_bg_color: app.theme_cls.primary_color
+                    MDLabel:
+                        text: 'Вопросий: "7-5=?"'
+                        halign: "center"
+                    MDTextField:
+                        id: scr_test_2
+                        hint_text: "TYT tvoi otvet"
+                        helper_text: "Vvedi svoi otvet"
+                        helper_text_mode: "on_focus"
+                    MDRaisedButton:
+                        text: "Далее"
+                        text_color: 0, 0, 1, 1
+                        on_press: app.submit_2(scr_test_2.text)
+            Screen:
+                name: "scr 3"
+                MDBoxLayout:
+                    adaptive_height: True
+                    md_bg_color: app.theme_cls.primary_color
+                    MDLabel:
+                        text: 'Вопросий: "12/6=?"'
+                        halign: "center"
+                    MDTextField:
+                        id: scr_test_3
+                        hint_text: "TYT tvoi otvet"
+                        helper_text: "Vvedi svoi otvet"
+                        helper_text_mode: "on_focus"
+                    MDRaisedButton:
+                        text: "Далее"
+                        text_color: 0, 0, 1, 1
+                        on_press: app.submit_3(scr_test_3.text)
+            Screen:
+                name: "scr 4"
+                MDBoxLayout:
+                    adaptive_height: True
+                    md_bg_color: app.theme_cls.primary_color
+                    MDLabel:
+                        text: 'Вопросий: "2*1=?"'
+                        halign: "center"
+                    MDTextField:
+                        id: scr_test_4
+                        hint_text: "TYT tvoi otvet"
+                        helper_text: "Vvedi svoi otvet"
+                        helper_text_mode: "on_focus"
+                    MDRaisedButton:
+                        text: "Далее"
+                        text_color: 0, 0, 1, 1
+                        on_press: app.submit_4(scr_test_4.text)
+            Screen:
+                name: "scr 5"
+                MDBoxLayout:
+                    adaptive_height: True
+                    md_bg_color: app.theme_cls.primary_color
+                    MDLabel:
+                        text: 'Вопросий: "5*4=?"'
+                        halign: "center"
+                    MDTextField:
+                        id: scr_test_5
+                        hint_text: "TYT tvoi otvet"
+                        helper_text: "Vvedi svoi otvet"
+                        helper_text_mode: "on_focus"
+                    MDRaisedButton:
+                        text: "Далее"
+                        text_color: 0, 0, 1, 1
+                        on_press: app.submit_5(scr_test_5.text)
+            Screen:
+                name: "scr 6"
+                MDBoxLayout:
+                    adaptive_height: True
+                    md_bg_color: app.theme_cls.primary_color
+                    MDLabel:
+                        text: 'Вопросий: "sqrt(9)=?"'
+                        halign: "center"
+                    MDTextField:
+                        id: scr_test_6
+                        hint_text: "TYT tvoi otvet"
+                        helper_text: "Vvedi svoi otvet"
+                        helper_text_mode: "on_focus"
+                    MDRaisedButton:
+                        text: "Далее"
+                        text_color: 0, 0, 1, 1
+                        on_press: app.submit_6(scr_test_6.text)
+            Screen:
+                name: "scr 7"
+                MDBoxLayout:
+                    adaptive_height: True
+                    md_bg_color: app.theme_cls.primary_color
+                    MDLabel:
+                        text: ' Вопросий: "sqr(5)=?"'
+                        halign: "center"
+                    MDTextField:
+                        id: scr_test_7
+                        hint_text: "TYT tvoi otvet"
+                        helper_text: "Vvedi svoi otvet"
+                        helper_text_mode: "on_focus"
+                    MDRaisedButton:
+                        text: "Далее"
+                        text_color: 0, 0, 1, 1
+                        on_press: app.submit_7(scr_test_7.text)
+            Screen:
+                name: "scr 8"
+                MDBoxLayout:
+                    adaptive_height: True
+                    md_bg_color: app.theme_cls.primary_color
+                    MDLabel:
+                        text: 'Вопросий: "5-7=?"'
+                        halign: "center"
+                    MDTextField:
+                        id: scr_test_8
+                        hint_text: "TYT tvoi otvet"
+                        helper_text: "Vvedi svoi otvet"
+                        helper_text_mode: "on_focus"
+                    MDRaisedButton:
+                        text: "Далее"
+                        text_color: 0, 0, 1, 1
+                        on_press: app.submit_8(scr_test_8.text)
+            Screen:
+                name: "scr 9"
+                MDBoxLayout:
+                    adaptive_height: True
+                    md_bg_color: app.theme_cls.primary_color
+                    MDLabel:
+                        text: 'Вопросий: "10 - 3 =?"'
+                        halign: "center"
+                    MDTextField:
+                        id: scr_test_9
+                        hint_text: "TYT tvoi otvet"
+                        helper_text: "Vvedi svoi otvet"
+                        helper_text_mode: "on_focus"
+                    MDRaisedButton:
+                        text: "Далее"
+                        text_color: 0, 0, 1, 1
+                        on_press: app.submit_9(scr_test_9.text)
+            Screen:
+                name: "scr 10"
+                MDBoxLayout:
+                    adaptive_height: True
+                    md_bg_color: app.theme_cls.primary_color
+                    MDLabel:
+                        text: 'Вопросий: "25 * 25 = ?"'
+                        halign: "center"
+                    MDTextField:
+                        id: scr_test_10
+                        hint_text: "TYT tvoi otvet"
+                        helper_text: "Vvedi svoi otvet"
+                        helper_text_mode: "on_focus"
+                    MDRaisedButton:
+                        text: "Завершить"
+                        text_color: 0, 0, 1, 1
+                        on_press: app.submit_10(scr_test_10.text)
+            Screen:
+                name: "scr 11"
+                MDBoxLayout:
+                    adaptive_height: True
+                    md_bg_color: app.theme_cls.primary_color
+                    MDLabel:
+                        text: 'Нажми на кнопку чтобы посмотреть результат: '
+                        halign: "center"
+                    MDRaisedButton:
+                        text: "Далее"
+                        text_color: 0, 0, 1, 1
+                        on_press: app.submit_11()
+
+
+        MDNavigationDrawer:
+            id: nav_drawer
+
+            ContentNavigationDrawer:
+                screen_manager: screen_manager
+                nav_drawer: nav_drawer
