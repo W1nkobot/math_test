@@ -143,7 +143,7 @@ class Math_test(MDApp):
             if i:
                 a = a + 1
         name = text
-
+new = 0
 
 
 Math_test().run()
